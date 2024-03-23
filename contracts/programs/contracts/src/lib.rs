@@ -1,15 +1,23 @@
-use anchor_lang::prelude::*;
+use solana_program::{
+    account_info::AccountInfo,
+    entrypoint,
+    entrypoint::ProgramResult,
+    pubkey::Pubkey,
+    msg,
+};
 
-declare_id!("Au9X2TaJ3Sn8Eg2MmPCzz5U2BLEFfQttqyCLQ2zduH1j");
+// declare and export the program's entrypoint
+entrypoint!(process_instruction);
 
-#[program]
-pub mod contracts {
-    use super::*;
+// program entrypoint's implementation
+pub fn process_instruction(
+    program_id: &Pubkey,
+    accounts: &[AccountInfo],
+    instruction_data: &[u8]
+) -> ProgramResult {
+    // log a message to the blockchain
+    msg!("Hello, world!");
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        Ok(())
-    }
+    // gracefully exit the program
+    Ok(())
 }
-
-#[derive(Accounts)]
-pub struct Initialize {}
