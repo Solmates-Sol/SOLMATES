@@ -1,10 +1,12 @@
 "use client";
 import Wallet from "@/pages/wallets/Wallet";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Navbar = () => {
 	const [searchBoxVisibility, setSearchBoxVisibility] = useState(false);
+	const router = useRouter();
 
 	const [userNavPanel, setUserNavPanel] = useState(false);
 
@@ -16,6 +18,10 @@ const Navbar = () => {
 		setTimeout(() => {
 			setUserNavPanel(false);
 		}, 200);
+	};
+
+	const handleNavigate = () => {
+		router.push("/video");
 	};
 
 	return (
@@ -31,6 +37,7 @@ const Navbar = () => {
 					<Link
 						href="/video"
 						className="hidden md:flex gap-2 link items-center"
+						onClick={handleNavigate}
 					>
 						<i className="fi fi-sr-video-camera-alt text-2xl text-twitter mt-2"></i>
 						<p className="text-xl text-black font-semibold">Chat</p>
