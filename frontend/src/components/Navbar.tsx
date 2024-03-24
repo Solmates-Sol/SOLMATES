@@ -1,4 +1,5 @@
 "use client";
+import Wallet from "@/pages/wallets/Wallet";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -28,15 +29,16 @@ const Navbar = () => {
 
 				<div className="flex items-center gap-3 md:gap-6 ml-auto">
 					<Link
-						href="/editor"
+						href="/video"
 						className="hidden md:flex gap-2 link items-center"
 					>
 						<i className="fi fi-sr-video-camera-alt text-2xl text-twitter mt-2"></i>
 						<p className="text-xl text-black font-semibold">Chat</p>
 					</Link>
-					<Link className="btn-dark py-2" href="/signin">
-						Connect Wallet
-					</Link>
+					<span className="btn-wallet py-2">
+						<Wallet />
+						{/* Connect Wallet */}
+					</span>
 				</div>
 			</nav>
 			{/* <Outlet /> */}
