@@ -1,14 +1,14 @@
-const types = [
-    {
-        name : "Web3"
-    },{
-        name : "Ethereum"
+const types = [{
+        name : "Wormhole"
     },
     {
-        name : "full-stack"
+        name : "Huddle01"
     },
     {
-        name : "Study Abroad"
+        name : "Backpack"
+    },
+    {
+        name : "Superteam"
     }
 ]
 
