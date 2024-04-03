@@ -27,8 +27,8 @@ const Navbar = () => {
 	return (
 		<>
 			<nav className="navbar">
-				<Link href="/" className="flex-none w-10">
-					<span className="w-full text-3xl font-semibold">
+				<Link href="/" className="flex-none w-10 ">
+					<span className="w-full text-xl md:text-2xl lg:text-3xl font-semibold mx-10">
 						SOLMATES
 					</span>
 				</Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
 					<Link href="/login" className="btn-dark py-2">
 						Login
 					</Link>
-					<span className="btn-wallet py-2">
+					<span className="btn-wallet py-2 mx-10">
 						<Wallet />
 						{/* Connect Wallet */}
 					</span>
