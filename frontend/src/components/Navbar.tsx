@@ -40,7 +40,12 @@ const Navbar = () => {
 						onClick={handleNavigate}
 					>
 						<i className="fi fi-sr-video-camera-alt text-2xl text-twitter mt-2"></i>
-						<p className="text-xl text-black font-semibold">Chat</p>
+						<span className="text-xl text-black font-semibold">
+							Chat
+						</span>
+					</Link>
+					<Link href="/login" className="btn-dark py-2">
+						Login
 					</Link>
 					<span className="btn-wallet py-2">
 						<Wallet />
