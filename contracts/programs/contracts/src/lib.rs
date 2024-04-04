@@ -1,23 +1,53 @@
+#![cfg_attr(feature = "strict", deny(warnings))]
+#![cfg_attr(not(feature = "strict"), allow(dead_code, unused_imports))]
+
 use solana_program::{
-    account_info::AccountInfo,
+    account_info::{next_account_info, AccountInfo},
     entrypoint,
     entrypoint::ProgramResult,
-    pubkey::Pubkey,
     msg,
+    program_error::ProgramError,
+    pubkey::Pubkey,
 };
 
-// declare and export the program's entrypoint
-entrypoint!(process_instruction);
+solana_program::declare_id!("");
 
-// program entrypoint's implementation
-pub fn process_instruction(
-    program_id: &Pubkey,
-    accounts: &[AccountInfo],
-    instruction_data: &[u8]
-) -> ProgramResult {
-    // log a message to the blockchain
-    msg!("Hello, world!");
+struct Expert {
+    pubkey: Pubkey,
+}
 
-    // gracefully exit the program
+struct User {
+    pubkey: Pubkey,
+    sol_balance: u64, 
+}
+
+// Define the entry point for the program
+#[entrypoint]
+fn process(_program_id: &Pubkey, accounts: &[AccountInfo], _instruction_data: &[u8]) -> ProgramResult {
+    let accounts_iter = &mut accounts.iter();
+    let user_account = next_account_info(accounts_iter)?;
+    let expert_account = next_account_info(accounts_iter)?;
+
+    let user_data = User {
+        pubkey: *user_account.key,
+        sol_balance: user_account.lamports(),
+    };
+    let expert_data = Expert {
+        pubkey: *expert_account.key,
+    };
+
+    let sol_to_transfer = 1;// Amount of SOL to transfer
+    if user_data.sol_balance >= sol_to_transfer {
+        // Transfer SOL to the expert's account
+        user_account.try_borrow_mut_lamports(sol_to_transfer)?;
+        expert_account.try_borrow_mut_lamports(-sol_to_transfer)?;
+        msg!("Transaction successful: {} SOL transferred to expert.", sol_to_transfer);
+    } else {
+        return Err(ProgramError::InsufficientFunds);
+    }
+
+
     Ok(())
 }
+
+solana_program::entrypoint!(process);
