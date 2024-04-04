@@ -1,11 +1,10 @@
-// components/Home.js
-import React from "react";
 import Mentors from "./Mentors";
+import OverviewCard from "./OverviewCard";
 
 const HomeComponent = () => {
 	return (
 		<>
-			<div className="w-screen h-screen mx-auto flex flex-col justify-center items-center bg-[#fbf5e5]">
+			<div className="w-screen h-screen mx-auto flex flex-col justify-center items-center bg-[#fbf5e5] overflow-hidden">
 				<h1 className=" my-5 text-center text-black text-4xl font-bold">
 					Start your side hustle today
 				</h1>
@@ -21,6 +20,7 @@ const HomeComponent = () => {
 				</div>
 			</div>
 			<Mentors />
+			<OverviewCard />
 		</>
 	);
 };
