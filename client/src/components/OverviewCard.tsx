@@ -7,7 +7,7 @@ const OverviewCard = () => {
 				<div className="border border-black w-[50%] text-center h-96 items-center rounded-3xl shadow-2xl">
 					<div className="flex flex-col justify-center mt-4 items-center">
 					<img
-				src="https://api.dicebear.com/8.x/micah/svg?seed=aneka"
+				src="https://api.dicebear.com/8.x/micah/svg?seed=Nala"
 				alt="mentor"
 				className="w-[50%] h-40 object-cover object-fill border border-black shadow-lg rounded-full"
 			/>
