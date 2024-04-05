@@ -10,7 +10,7 @@ import Wallet from "../pages/wallets/Wallet";
 export type StudentFormData = {
 	username: string;
 	email: string;
-	password: string;
+	location: string;
 };
 
 const StudentForm = () => {
@@ -80,17 +80,17 @@ const StudentForm = () => {
 					)}
 				</label>
 				<label className="text-gray-700 text-md font-bold flex-1">
-					Password
+					Location
 					<input
-						type="password"
+						type="text"
 						className="border rounded w-full py-1 px-2 font-normal"
-						{...register("password", {
+						{...register("location", {
 							required: "Field is required",
 						})}
 					/>
-					{errors.password && (
+					{errors.location && (
 						<span className="text-red-500 text-sm">
-							{errors.password.message}
+							{errors.location.message}
 						</span>
 					)}
 				</label>

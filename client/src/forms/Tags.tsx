@@ -13,7 +13,7 @@ const Tags = () => {
 		handleSubmit,
 	} = useForm<TagsData>();
   return (
-    <div>
+    <div className='mt-4'>
         <label className="text-gray-700 text-md font-bold flex-1">
 					Add relevant tags 
                     <span className='text-sm text-light-grey ml-1'>
