@@ -5,9 +5,11 @@ import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
 import Mentors from "./pages/Mentors";
 import Profile from "./pages/Profile"
+import Footer from "./components/Footer";
 
 function App() {
 	return (
+	<div>
 		<Routes>
 			<Route path="/" element={<Navbar />}>
 				<Route path="/" element={<HomeComponent />} />
@@ -17,6 +19,9 @@ function App() {
 				<Route path="/profile" element={<Profile/>} />
 			</Route>
 		</Routes>
+		<Footer />
+	</div>
+			
 	);
 }
 
