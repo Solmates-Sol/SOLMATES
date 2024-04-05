@@ -22,6 +22,7 @@ export default {
 			"transparent": "transparent",
 			"twitter": "#1DA1F2",
 			"purple": "#8B46FF",
+			"light-grey": "#4e5157"
 		},
 
 		fontSize: {
