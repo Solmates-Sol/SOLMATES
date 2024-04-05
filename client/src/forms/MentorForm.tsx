@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLinks from "./SocialLinks";
 import Tags from "./Tags";
+import Wallet from "../pages/wallets/Wallet";
 
 export type MentorFormData = {
 	username: string;
@@ -197,6 +198,10 @@ const MentorForm = () => {
 				</label>
                 <SocialLinks />
                 <Tags />
+				<div className="w-full text-center">
+
+				<button className="btn-dark w-1/3">LFG</button>
+				</div>
 			</div>
 		</form>
 	);

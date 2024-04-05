@@ -1,4 +1,3 @@
-"use client";
 // imports methods relevant to the react framework
 import * as React from "react";
 // library we use to interact with the solana json rpc api

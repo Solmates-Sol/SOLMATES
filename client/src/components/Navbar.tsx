@@ -31,10 +31,10 @@ const Navbar: React.FC = () => {
 					<Link to="/signin" className="btn-dark py-2 px-6">
 						Join Now
 					</Link>
-					{/* <span className="btn-wallet py-2 mx-10">
+					{/* <span className="btn-wallet py-2 mx-10"> */}
 						<Wallet />
-						Connect Wallet
-					</span> */}
+						{/* Connect Wallet */}
+					{/* </span> */}
 				</div>
 			</nav>
 			<Outlet />

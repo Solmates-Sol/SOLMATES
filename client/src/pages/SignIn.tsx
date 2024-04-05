@@ -52,10 +52,10 @@ const SignIn = () => {
 	});
 
 	return (
-		<div className="flex flex-col items-center justify-start h-[120vh] border border-black">
-			<div className="flex flex-row gap-4 border border-red">
-				<button className="border border-twitter">Mentor</button>
-				<button className="border border-black">Student</button>
+		<div className="flex flex-col items-center justify-start h-[140vh]">
+			<div className="flex flex-row gap-4 m-4">
+				<button className="border btn-dark px-8">Mentor</button>
+				<button className="border border-black btn-light px-8">Student</button>
 			</div>
 			{
 				isMentor ? 
