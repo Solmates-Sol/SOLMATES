@@ -2,7 +2,7 @@ import React from "react";
 import ServiceType from "../utils/types";
 import Card from "./Card";
 
-function Mentors() {
+function Featured() {
 	console.log(ServiceType);
 	return (
 		<div className="w-full mx-auto py-2 flex flex-col h-full items-center bg-[#ebcb7c]">
@@ -33,4 +33,4 @@ function Mentors() {
 	);
 }
 
-export default Mentors;
+export default Featured;

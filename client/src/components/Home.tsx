@@ -1,4 +1,4 @@
-import Mentors from "./Mentors";
+import Featured from "./Featured"
 import OverviewCard from "./OverviewCard";
 
 const HomeComponent = () => {
@@ -19,7 +19,7 @@ const HomeComponent = () => {
 					</button>
 				</div>
 			</div>
-			<Mentors />
+			<Featured />
 			<OverviewCard />
 		</>
 	);
