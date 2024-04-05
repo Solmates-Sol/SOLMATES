@@ -3,18 +3,22 @@ import { useForm } from "react-hook-form";
 // import { useMutation, useQueryClient } from "react-query";
 // import { useAppContext } from "../contexts/AppContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import SocialLinks from "./SocialLinks";
+import Tags from "./Tags";
+import Wallet from "../pages/wallets/Wallet";
 
-export type SignInFormData = {
+export type StudentFormData = {
+	username: string;
 	email: string;
 	password: string;
 };
 
 const StudentForm = () => {
-    const {
+	const {
 		register,
 		formState: { errors },
 		handleSubmit,
-	} = useForm<SignInFormData>();
+	} = useForm<StudentFormData>();
 
 	// const mutation = useMutation(apiClient.signIn, {
 	// 	onSuccess: async () => {
@@ -38,12 +42,28 @@ const StudentForm = () => {
 		// mutation.mutate(data);
 		console.log(data);
 	});
-  return (
-    <form
-				className="flex flex-col gap-5 max-w-md mx-auto border border-black shadow-lg p-16 rounded-xl justify-center"
-				onSubmit={onSubmit}
-			>
-				<h2 className="text-2xl font-bold mx-auto">Sign In</h2>
+	return (
+		<form
+			className="flex flex-col gap-5 w-[40vw] mx-auto border border-black shadow-lg p-6 rounded-xl justify-center"
+			onSubmit={onSubmit}
+		>
+			<h2 className="text-2xl font-bold mx-auto">Student Form</h2>
+			<div className="flex flex-col gap-4">
+				<label className="text-gray-700 text-md font-bold flex-1">
+					Username
+					<input
+						type="text"
+						className="border rounded w-full py-1 px-2 font-normal"
+						{...register("username", {
+							required: "Field is required",
+						})}
+					/>
+					{errors.username && (
+						<span className="text-red-500 text-sm">
+							{errors.username.message}
+						</span>
+					)}
+				</label>
 				<label className="text-gray-700 text-md font-bold flex-1">
 					Email
 					<input
@@ -66,11 +86,6 @@ const StudentForm = () => {
 						className="border rounded w-full py-1 px-2 font-normal"
 						{...register("password", {
 							required: "Field is required",
-							minLength: {
-								value: 6,
-								message:
-									"Password must be atleast 6 characters",
-							},
 						})}
 					/>
 					{errors.password && (
@@ -79,21 +94,9 @@ const StudentForm = () => {
 						</span>
 					)}
 				</label>
-				<span className="flex mx-auto">
-					<button
-						type="submit"
-						className="bg-blue-600 text-white py-2 font-bold hover:bg-blue-500 text-xl px-6 border rounded-lg"
-					>
-						Login
-					</button>
-				</span>
-				<span className="text-sm mx-auto">
-					Not Registered?{" "}
-					<Link to="/register" className="font-semibold underline">
-						Create an account here.
-					</Link>
-				</span>
-			</form>)
-}
+			</div>
+		</form>
+	);
+};
 
-export default StudentForm
+export default StudentForm;
