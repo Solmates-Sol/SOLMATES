@@ -54,8 +54,8 @@ const SignIn = () => {
 	return (
 		<div className="flex flex-col items-center justify-start h-[140vh]">
 			<div className="flex flex-row gap-4 m-4">
-				<button className="border btn-dark px-8">Mentor</button>
-				<button className="border border-black btn-light px-8">Student</button>
+				<button className={`whitespace-nowrap  rounded-full py-3 text-xl capitalize hover:bg-opacity-80 px-8 border ${isMentor ? 'bg-black text-white' : 'border-black text-black'}`} onClick={() => setIsMentor(true)}>Mentor</button>
+				<button className={`whitespace-nowrap  rounded-full py-3 text-xl capitalize hover:bg-opacity-80 px-8 border ${isMentor ? 'border-black text-black' : 'bg-black text-white'}`} onClick={() => setIsMentor(false)}>Student</button>
 			</div>
 			{
 				isMentor ? 
