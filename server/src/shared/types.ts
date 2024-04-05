@@ -1,5 +1,6 @@
 export type MentorType = {
     _id: string;
+    mentorId: string;
     username: string;
     email: string;
     companyName: string;

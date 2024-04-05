@@ -3,6 +3,7 @@ import { MentorType } from "../shared/types"
 
 const mentorSchema = new mongoose.Schema<MentorType>({
     username: { type: String, required: true},
+    mentorId: { type: String, required: true},
     email : { type: String, required: true},
     companyName: { type: String},
     Role : { type: String},
