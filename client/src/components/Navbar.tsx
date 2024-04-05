@@ -28,22 +28,13 @@ const Navbar: React.FC = () => {
 				</Link>
 
 				<div className="flex items-center gap-3 md:gap-6 ml-auto">
-					<Link
-						to="/video"
-						className="hidden md:flex gap-2 link items-center"
-					>
-						<i className="fi fi-sr-video-camera-alt text-2xl text-twitter mt-2"></i>
-						<span className="text-xl text-black font-semibold">
-							Chat
-						</span>
+					<Link to="/signin" className="btn-dark py-2 px-6">
+						Join Now
 					</Link>
-					<Link to="/login" className="btn-dark py-2">
-						Login
-					</Link>
-					<span className="btn-wallet py-2 mx-10">
+					{/* <span className="btn-wallet py-2 mx-10">
 						<Wallet />
-						{/* Connect Wallet */}
-					</span>
+						Connect Wallet
+					</span> */}
 				</div>
 			</nav>
 			<Outlet />

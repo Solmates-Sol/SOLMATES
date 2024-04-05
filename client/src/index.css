@@ -45,7 +45,7 @@
 		@apply whitespace-nowrap bg-black text-white rounded-full py-3 px-6 text-xl capitalize hover:bg-opacity-80;
 	}
 	.btn-wallet {
-		@apply whitespace-nowrap text-white rounded-full py-3 px-6 text-xl capitalize hover:bg-opacity-80;
+		@apply whitespace-nowrap bg-twitter text-white rounded-full py-3 px-6 text-xl capitalize hover:bg-opacity-80;
 	}
 
 	.btn-red {
