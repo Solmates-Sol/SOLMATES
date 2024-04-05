@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 // import { useMutation, useQueryClient } from "react-query";
 // import { useAppContext } from "../contexts/AppContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import MentorForm from "../forms/MentorForm";
+import StudentForm from "../forms/StudentForm";
+import { useState } from "react";
 
 export type SignInFormData = {
 	email: string;
@@ -11,6 +14,9 @@ export type SignInFormData = {
 
 const SignIn = () => {
 	// const { showToast } = useAppContext();
+
+	const [isMentor, setIsMentor] = useState(true)
+
 	const navigate = useNavigate();
 	// const queryClient = useQueryClient();
 
@@ -46,62 +52,16 @@ const SignIn = () => {
 	});
 
 	return (
-		<div className="flex items-center justify-center h-[90vh]">
-			<form
-				className="flex flex-col gap-5 max-w-md mx-auto border border-black shadow-lg p-16 rounded-xl justify-center"
-				onSubmit={onSubmit}
-			>
-				<h2 className="text-2xl font-bold mx-auto">Sign In</h2>
-				<label className="text-gray-700 text-md font-bold flex-1">
-					Email
-					<input
-						type="email"
-						className="border rounded w-full py-1 px-2 font-normal"
-						{...register("email", {
-							required: "Field is required",
-						})}
-					/>
-					{errors.email && (
-						<span className="text-red-500 text-sm">
-							{errors.email.message}
-						</span>
-					)}
-				</label>
-				<label className="text-gray-700 text-md font-bold flex-1">
-					Password
-					<input
-						type="password"
-						className="border rounded w-full py-1 px-2 font-normal"
-						{...register("password", {
-							required: "Field is required",
-							minLength: {
-								value: 6,
-								message:
-									"Password must be atleast 6 characters",
-							},
-						})}
-					/>
-					{errors.password && (
-						<span className="text-red-500 text-sm">
-							{errors.password.message}
-						</span>
-					)}
-				</label>
-				<span className="flex mx-auto">
-					<button
-						type="submit"
-						className="bg-blue-600 text-white py-2 font-bold hover:bg-blue-500 text-xl px-6 border rounded-lg"
-					>
-						Login
-					</button>
-				</span>
-				<span className="text-sm mx-auto">
-					Not Registered?{" "}
-					<Link to="/register" className="font-semibold underline">
-						Create an account here.
-					</Link>
-				</span>
-			</form>
+		<div className="flex flex-col items-center justify-start h-[85vh] border border-black">
+			<div className="flex flex-row gap-4 border border-red">
+				<button className="border border-twitter">Mentor</button>
+				<button className="border border-black">Student</button>
+			</div>
+			{
+				isMentor ? 
+				<MentorForm /> :
+			<StudentForm />
+			}
 		</div>
 	);
 };
