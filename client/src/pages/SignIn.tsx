@@ -52,7 +52,7 @@ const SignIn = () => {
 	});
 
 	return (
-		<div className="flex flex-col items-center justify-start h-[85vh] border border-black">
+		<div className="flex flex-col items-center justify-start h-[120vh] border border-black">
 			<div className="flex flex-row gap-4 border border-red">
 				<button className="border border-twitter">Mentor</button>
 				<button className="border border-black">Student</button>
@@ -60,7 +60,7 @@ const SignIn = () => {
 			{
 				isMentor ? 
 				<MentorForm /> :
-			<StudentForm />
+				<StudentForm />
 			}
 		</div>
 	);

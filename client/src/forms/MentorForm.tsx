@@ -3,13 +3,15 @@ import { useForm } from "react-hook-form";
 // import { useMutation, useQueryClient } from "react-query";
 // import { useAppContext } from "../contexts/AppContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import SocialLinks from "./SocialLinks";
+import Tags from "./Tags";
 
-export type HotelFormData = {
+export type MentorFormData = {
 	username: string;
 	email: string;
 	company: string;
     role:string;
-	country: string;
+	location: string;
 	description: string;
 	type: string;
 	pricePerSession: number;
@@ -26,7 +28,7 @@ const MentorForm = () => {
 		register,
 		formState: { errors },
 		handleSubmit,
-	} = useForm<HotelFormData>();
+	} = useForm<MentorFormData>();
 
 	// const mutation = useMutation(apiClient.signIn, {
 	// 	onSuccess: async () => {
@@ -52,7 +54,7 @@ const MentorForm = () => {
 	});
 	return (
 		<form
-			className="flex flex-col gap-5 w-[40vw] mx-auto border border-black shadow-lg p-16 rounded-xl justify-center"
+			className="flex flex-col gap-5 w-[40vw] mx-auto border border-black shadow-lg p-6 rounded-xl justify-center"
 			onSubmit={onSubmit}
 		>
 			<h2 className="text-2xl font-bold mx-auto">Mentor Form</h2>
@@ -88,7 +90,7 @@ const MentorForm = () => {
 					)}
 				</label>
 
-				<div className="flex gap-4 items-center">
+				<div className="flex gap-2 justify-between">
 					<label className="text-gray-700 text-md font-bold">
 						Company Name
 						<input
@@ -104,7 +106,7 @@ const MentorForm = () => {
 							</span>
 						)}
 					</label>
-					<label className="text-gray-700 text-md font-bold">
+					<label className="text-gray-700 text-md w-1/2 font-bold">
 						Role
 						<input
 							type="text"
@@ -120,6 +122,21 @@ const MentorForm = () => {
 						)}
 					</label>
 				</div>
+                <label className="text-gray-700 text-md font-bold flex-1">
+					Location
+					<input
+						type="text"
+						className="border rounded w-full py-1 px-2 font-normal"
+						{...register("location", {
+							required: "Field is required",
+						})}
+					/>
+					{errors.location && (
+						<span className="text-red-500 text-sm">
+							{errors.location.message}
+						</span>
+					)}
+				</label>
 
                 <label className="text-gray-700 text-md font-bold flex-1 w-[100%]">
 						YOE
@@ -178,7 +195,8 @@ const MentorForm = () => {
 						</span>
 					)}
 				</label>
-
+                <SocialLinks />
+                <Tags />
 			</div>
 		</form>
 	);
