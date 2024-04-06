@@ -3,9 +3,9 @@ import ServiceType from "../utils/types";
 import Card from "./Card";
 
 function Featured() {
-	console.log(ServiceType);
+
 	return (
-		<div className="w-full mx-auto py-2 flex flex-col h-full items-center bg-[#ebcb7c]">
+		<div className="w-full mx-auto py-2 flex flex-col h-screen items-center bg-[#ebcb7c]">
 			<h1 className="text-3xl w-full text-center mt-10 font-bold">
 				Learn And Grow Together
 			</h1>
@@ -13,7 +13,7 @@ function Featured() {
 				Turn your passion and knowledge into a thriving business. Help
 				your audience get ahead in life
 			</p>
-			<div className="w-full flex items-center justify-center gap-2 mt-4 px-10">
+			<div className="w-full flex items-center justify-center gap-2 mt-5 px-10">
 				{ServiceType.map((type, i) => {
 					return (
 						<div key={i} className="flex flex-col items-center">
@@ -24,7 +24,7 @@ function Featured() {
 					);
 				})}
 			</div>
-			<div className="grid grid-cols-2 h-full gap-5 mt-5 mx-5 lg:grid-cols-3 md:grid-cols-2">
+			<div className="grid grid-cols-1 h-full gap-5 mt-10 mx-5 lg:grid-cols-3 md:grid-cols-2">
 				<Card />
 				<Card />
 				<Card />

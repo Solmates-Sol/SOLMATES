@@ -3,7 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#ebcb7c] text-black">
-      <div className='text-2xl font-bold lg:text-3xl md:text-2xl text-black flex items-center mt-1 pl-8 pt-8'>
+      <div className='text-2xl font-bold lg:text-3xl md:text-2xl text-black flex items-center pl-8 pt-8'>
         SOLMATES
       </div>
       <div className="container mx-auto py-8">

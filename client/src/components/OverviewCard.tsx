@@ -2,7 +2,7 @@ import React from "react";
 
 const OverviewCard = () => {
 	return (
-		<div className="bg-[#fbf5e5] mb-[50px] flex flex-row pt-5 md:pt-10 lg:pt-10 h-[60vh]">
+		<div className="bg-[#fbf5e5] mb-[50px] flex flex-row pt-5 md:pt-10 lg:pt-10 w-full h-screen">
 			<div className="md:flex md:flex-col hidden my-auto w-[30%] md:w-[60%] sm:w-[70%] sm:mx-auto  items-center">
 				<div className="border border-black w-[50%] text-center h-96 items-center rounded-3xl shadow-2xl">
 					<div className="flex flex-col justify-center mt-4 items-center">

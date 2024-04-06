@@ -80,7 +80,7 @@ const StudentForm = () => {
 					)}
 				</label>
 				<label className="text-gray-700 text-md font-bold flex-1">
-					Location
+					First Name
 					<input
 						type="text"
 						className="border rounded w-full py-1 px-2 font-normal"
@@ -94,6 +94,22 @@ const StudentForm = () => {
 						</span>
 					)}
 				</label>
+				<label className="text-gray-700 text-md font-bold flex-1">
+					Last Name
+					<input
+						type="text"
+						className="border rounded w-full py-1 px-2 font-normal"
+						{...register("location", {
+							required: "Field is required",
+						})}
+					/>
+					{errors.location && (
+						<span className="text-red-500 text-sm">
+							{errors.location.message}
+						</span>
+					)}
+				</label>
+				<button className="btn-dark w-1/3 mx-auto text-white font-bold py-2 rounded">LFG</button>
 			</div>
 		</form>
 	);
