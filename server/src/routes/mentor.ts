@@ -4,6 +4,15 @@ import { MentorType } from "../shared/types";
 
 const router = express.Router()
 
+
+declare global {
+    namespace Express {
+        interface Request {
+            mentorId: string;
+        }
+    }
+}
+
 router.post("/", async (req: Request, res: Response) => {
     try{
         const mentorData: MentorType = req.body;
@@ -32,5 +41,18 @@ router.get("/", async(req: Request, res: Response) => {
         })
     }
 })
+
+router.get("/all-Mentors", async(req: Request, res: Response) => {
+    try{
+        const mentors = await Mentor.find();
+        res.json(mentors);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({
+            message: "Error fetching mentors!"
+        })
+    }
+}
+)
 
 export default router;

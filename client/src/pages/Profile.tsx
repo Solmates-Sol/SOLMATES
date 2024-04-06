@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ServiceCard from "../components/ServiceCard";
 
 const Profile = () => {
   return (
@@ -65,13 +66,17 @@ const Profile = () => {
               </span>
             </div>
           </div>
-          <h1 className="text-xl ml-1 my-1 font-sans font-semibold">Description</h1>
+          <h1 className="text-xl ml-1 my-1 font-sans font-semibold">
+            Description
+          </h1>
           <p className=" mx-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
-            porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et
-            faucibus arcu condimentum eget.
+            porttitor sem. Aliquam erat volutpat.
           </p>
         </div>
+      </div>
+      <div className="flex my-20 items-center justify-center gap-24">
+        <ServiceCard /> <ServiceCard /> <ServiceCard />
       </div>
     </div>
   );
