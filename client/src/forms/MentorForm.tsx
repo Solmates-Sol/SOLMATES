@@ -5,23 +5,18 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLinks from "./SocialLinks";
 import Tags from "./Tags";
-import Wallet from "../pages/wallets/Wallet";
+import useWalletData, { useWalletContext } from "../context/WalletContext";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 export type MentorFormData = {
 	username: string;
 	email: string;
 	company: string;
-    role:string;
+	role: string;
 	location: string;
 	description: string;
-	type: string;
 	pricePerSession: number;
-	starRating: number;
-	facilities: string[];
-	imageFiles: FileList;
-	imageUrls: string[];
-	adultCount: number;
-	childCount: number;
+	yearsOfExperience: number;
 };
 
 const MentorForm = () => {
@@ -30,6 +25,10 @@ const MentorForm = () => {
 		formState: { errors },
 		handleSubmit,
 	} = useForm<MentorFormData>();
+
+	const { publicKey } = useWallet();
+
+	const walletAddress = publicKey?.toBase58();
 
 	// const mutation = useMutation(apiClient.signIn, {
 	// 	onSuccess: async () => {
@@ -123,7 +122,7 @@ const MentorForm = () => {
 						)}
 					</label>
 				</div>
-                <label className="text-gray-700 text-md font-bold flex-1">
+				<label className="text-gray-700 text-md font-bold flex-1">
 					Location
 					<input
 						type="text"
@@ -139,29 +138,29 @@ const MentorForm = () => {
 					)}
 				</label>
 
-                <label className="text-gray-700 text-md font-bold flex-1 w-[100%]">
-						YOE
-						<select
-							{...register("starRating", {
-								required: "This field is required",
-							})}
-							className="border rounded w-full py-2 px-2 text-gray-700 font-normal"
-						>
-							<option value="" className="text-sm font-bold">
-								In years
+				<label className="text-gray-700 text-md font-bold flex-1 w-[100%]">
+					YOE
+					<select
+						{...register("yearsOfExperience", {
+							required: "This field is required",
+						})}
+						className="border rounded w-full py-2 px-2 text-gray-700 font-normal"
+					>
+						<option value="" className="text-sm font-bold">
+							In years
+						</option>
+						{[1, 2, 3, 4, 5].map((num) => (
+							<option value={num} key={num}>
+								{num}
 							</option>
-							{[1, 2, 3, 4, 5].map((num) => (
-								<option value={num} key={num}>
-									{num}
-								</option>
-							))}
-						</select>
-						{errors.starRating && (
-							<span className="text-red-500 text-sm">
-								{errors.starRating.message}
-							</span>
-						)}
-					</label>
+						))}
+					</select>
+					{errors.yearsOfExperience && (
+						<span className="text-red-500 text-sm">
+							{errors.yearsOfExperience.message}
+						</span>
+					)}
+				</label>
 
 				<label className="text-gray-700 text-md font-bold flex-1">
 					Description
@@ -183,8 +182,8 @@ const MentorForm = () => {
 					<input
 						type="number"
 						min={0.1}
-                        placeholder="0.1 SOL"
-                        step={0.1}
+						placeholder="0.1 SOL"
+						step={0.1}
 						className="border rounded w-full py-1 px-2 font-normal"
 						{...register("pricePerSession", {
 							required: "Field is required",
@@ -196,11 +195,14 @@ const MentorForm = () => {
 						</span>
 					)}
 				</label>
-                <SocialLinks />
-                <Tags />
+				<SocialLinks />
+				<Tags />
+				<div className="text-gray-700 text-md font-bold flex flex-col">
+					<span className="">Wallet Address : </span>
+					<span className="text-[#ff3131]">{walletAddress}</span>
+				</div>
 				<div className="w-full text-center">
-
-				<button className="btn-dark w-1/3">LFG</button>
+					<button className="btn-dark w-1/3">LFG</button>
 				</div>
 			</div>
 		</form>

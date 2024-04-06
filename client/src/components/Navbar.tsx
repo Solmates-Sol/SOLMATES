@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 			setUserNavPanel(false);
 		}, 200);
 	};
-
+	
 	return (
 		<>
 			<nav className="navbar">

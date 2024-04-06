@@ -15,15 +15,17 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 // imports methods for deriving data from the wallet's data store
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import SampleComponent from "../../components/SampleComponent";
+import useWalletData, { WalletProvider } from "../../context/WalletContext";
 
 const Wallet = () => {
+
 	// allows us to add the wallet account balance to our react function component
 	const [balance, setBalance] = React.useState<number | null>(0);
 	// we specify which network we want to connect to
 	const endpoint = web3.clusterApiUrl("devnet");
 	// we specify which wallets we want our wallet adapter to support
 	const wallets = [new walletAdapterWallets.PhantomWalletAdapter()];
-
 	// connection context object that is injected into the browser by the wallet
 	const { connection } = useConnection();
 	// user's public key of the wallet they connected to our application
@@ -37,6 +39,7 @@ const Wallet = () => {
 				const info = await connection.getAccountInfo(publicKey);
 				setBalance(info!.lamports / web3.LAMPORTS_PER_SOL);
 			}
+			console.log("Key: ", publicKey?.toBase58());
 		};
 		getInfo();
 		// the code above will execute whenever these variables change in any way
