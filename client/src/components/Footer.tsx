@@ -14,9 +14,9 @@ const Footer: React.FC = () => {
           <a href='/signin' className='hover:border-b-2 border-black'>
             Connect
           </a>
-          {/* <a href='https://www.colosseum.org/renaissance/resources' className='hover:border-b-2 border-black'>
+          <a href='https://www.colosseum.org/renaissance/resources' className='hover:border-b-2 border-black'>
             Resources
-          </a> */}
+          </a>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
           <p>&copy; {new Date().getFullYear()} SOLMATES </p>

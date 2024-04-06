@@ -21,30 +21,19 @@ function App() {
 	const wallets = useMemo(() => [new PhantomWalletAdapter()], []);
 
 	return (
-		<>
-			<ConnectionProvider endpoint={endpoint}>
-				<WalletProvider wallets={wallets} autoConnect>
-					<WalletModalProvider>
-						<Routes>
-							<Route path="/" element={<Navbar />}>
-								<Route path="/" element={<HomeComponent />} />
-								<Route path="/signin" element={<SignIn />} />
-								<Route
-									path="/register"
-									element={<Register />}
-								/>
-								<Route path="/mentors" element={<Mentors />} />
-								<Route
-									path="/:name/profile"
-									element={<Profile />}
-								/>
-							</Route>
-						</Routes>
-						<Footer />
-					</WalletModalProvider>
-				</WalletProvider>
-			</ConnectionProvider>
-		</>
+	<div>
+		<Routes>
+			<Route path="/" element={<Navbar />}>
+				<Route path="/" element={<HomeComponent />} />
+				<Route path="/signin" element={<SignIn />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/mentors" element={<Mentors />} />
+				<Route path="/profile/:wallet-address" element={<Profile/>} />
+			</Route>
+		</Routes>
+		<Footer />
+	</div>
+			
 	);
 }
 
