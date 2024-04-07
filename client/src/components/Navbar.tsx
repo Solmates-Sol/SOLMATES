@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
 	
 	return (
 		<>
-			<nav className="navbar">
+			<nav className="navbar z-30">
 				<Link to="/" className="flex-none w-10 ">
 					<span className="w-full text-xl md:text-2xl lg:text-3xl font-semibold mx-10">
 						SOLMATES

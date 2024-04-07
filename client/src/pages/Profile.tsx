@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import ServiceCard from "../components/ServiceCard";
+import data from "../utils/dummyData";
 
 const Profile = () => {
+  const walletAddress = useParams();
+  console.log(walletAddress);
+
+  const mentor = data.find(
+    (mentor) => mentor.walletAddress === walletAddress
+  );
+  console.log("----------------", mentor);
   return (
     <div className="w-full h-screen bg-black overflow-hidden">
       <div className="w-full h-[45%] bg-[#fbf5e5] flex px-36 border border-black justify-around py-10">
@@ -65,13 +74,17 @@ const Profile = () => {
               </span>
             </div>
           </div>
-          <h1 className="text-xl ml-1 my-1 font-sans font-semibold">Description</h1>
+          <h1 className="text-xl ml-1 my-1 font-sans font-semibold">
+            Description
+          </h1>
           <p className=" mx-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
-            porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et
-            faucibus arcu condimentum eget.
+            porttitor sem. Aliquam erat volutpat.
           </p>
         </div>
+      </div>
+      <div className="flex my-20 items-center mx-10 justify-center gap-20">
+        <ServiceCard /> <ServiceCard /> <ServiceCard />
       </div>
     </div>
   );
