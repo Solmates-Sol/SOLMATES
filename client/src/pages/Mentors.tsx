@@ -1,5 +1,6 @@
 import React from "react";
 import MentorCard from "../components/MentorCard";
+import data from "../utils/dummyData";
 
 const Mentors = () => {
 	return (
@@ -14,13 +15,11 @@ const Mentors = () => {
 
 			<div>
 				<div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-12 my-10 mx-10">
-					<MentorCard />
-					<MentorCard />
-					<MentorCard />
-					<MentorCard />
-					<MentorCard />
-					<MentorCard />
-					<MentorCard />
+					{
+						data.map((mentor, index) => (
+							<MentorCard key={index} mentor={mentor} />
+						))
+					}
 				</div>
 			</div>
 		</div>

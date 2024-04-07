@@ -36,7 +36,7 @@ const SocialLinks = () => {
 				<span className="py-1">Twitter:</span>
 				<input
 					type="text"
-					placeholder="https://github.com/username"
+					placeholder="https://twitter.com/username"
 					className="border rounded w-full py-1 px-2 font-normal ml-3"
 					{...register("twitter", {
 						required: "Field is required",
@@ -52,7 +52,7 @@ const SocialLinks = () => {
 				<span className="py-1">LinkedIn:</span>
 				<input
 					type="text"
-					placeholder="https://github.com/username"
+					placeholder="https://linkedin.com/username"
 					className="border rounded w-full py-1 px-2 font-normal"
 					{...register("linkedin", {
 						required: "Field is required",

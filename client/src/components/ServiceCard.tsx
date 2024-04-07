@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Huddle01Png from "../assets/huddle_01_logo.jpg";
 
 const ServiceCard: React.FC = () => {
@@ -17,11 +18,14 @@ const ServiceCard: React.FC = () => {
             <p className="text-xl font-semibold text-white">15 min</p>
           </div>
         </div>
-        <img
-          src={Huddle01Png}
-          alt="Huddle01Png"
-          className="w-12 h-12 rounded-full"
-        />
+        {/* https://solmates-huddle01.vercel.app/nuc-tcog-pmr/lobby */}
+        <Link to="https://solmates-huddle01.vercel.app/">
+          <img
+            src={Huddle01Png}
+            alt="Huddle01Png"
+            className="w-12 h-12 rounded-full"
+          />
+        </Link>
       </div>
     </div>
   );
