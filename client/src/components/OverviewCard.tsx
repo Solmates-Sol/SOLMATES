@@ -11,14 +11,14 @@ const OverviewCard = () => {
 				alt="mentor"
 				className="w-[50%] h-40 object-cover object-fill border border-black shadow-lg rounded-full"
 			/>
-						<span className="text-lg font-bold mt-2">Name</span>
+						<span className="text-lg font-bold mt-2">Chris</span>
 					</div>
 					<div className="flex flex-row justify-center mt-4 gap-6">
 						<span>Session Charge</span>
-						<span>10 SOL</span>
+						<span>0.5 SOL</span>
 					</div>
 					<div className="flex flex-row justify-center mt-4 gap-6">
-						<span>Company Name</span>
+						<span>Backpack</span>
 						<span>2 YOE</span>
 					</div>
 					<div className="flex flex-row justify-center mt-6 gap-6 text-xl font-bold">

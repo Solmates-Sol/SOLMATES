@@ -30,9 +30,9 @@ const HomeComponent = () => {
                     Find Mentor
                   </button>
                 </Link>
-                <Link to="/mentors">
+                <Link to="/learn">
                   <button className="btn-light text-black py-2 px-5 rounded-full border-2 border-black">
-                    Find Mentor
+                    Learn more
                   </button>
                 </Link>
               </div>
