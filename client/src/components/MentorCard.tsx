@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 
 const MentorCard = ({mentor}) => {
-  const {name, role, interests, skills, dummyNumber, website, github, email, twitter, linkedin , walletAddress} = mentor
+  const {name, role, interests, skills, dummyNumber, website, github, email, twitter, linkedin , walletAddress, imgName} = mentor
   return (
     
     <div className='border-2 border-black flex flex-col gap-2 justify-center items-center'>
         <div>
-           <img src="https://api.dicebear.com/8.x/micah/svg?seed=Nala" className='rounded-full w-[80%] h-[80%] mx-3 my-3' />
+           <img src={`https://api.dicebear.com/8.x/avataaars/svg?seed=${imgName}`}className='rounded-full w-[80%] h-[80%] mx-3 my-3' />
         </div>
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-xl font-bold'>{name}</h1>

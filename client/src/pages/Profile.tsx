@@ -16,17 +16,17 @@ const Profile = () => {
         <div className="profile flex flex-1 justify-center items-center gap-3 border border-black">
           <div>
             <img
-              src="https://api.dicebear.com/8.x/micah/svg?seed=aneka"
+              src="https://api.dicebear.com/8.x/avataaars/svg?seed=Max"
               alt="profile"
               className="w-40 h-40 rounded-full object-fill mx-auto bg-white shadow-lg"
             />
             <div className="flex justify-center items-center gap-2">
               <i className="fi fi-rs-marker  text-lg text-dark-grey"></i>
-              <p className="text-xl text-center">Earth</p>
+              <p className="text-xl text-center">SF</p>
             </div>
           </div>
           <div className="flex flex-col gap-5 mx-5">
-            <h1 className="text-2xl font-sans font-bold">Kirtiraj Thakor</h1>
+            <h1 className="text-2xl font-sans font-bold">John Doe</h1>
             <div className="flex gap-5">
               <Link to="/" className="text-lg text-center">
                 {" "}
@@ -47,15 +47,15 @@ const Profile = () => {
           <div className="flex gap-5">
             <div className="">
               <h3 className="text-xl font-sans font-semibold">Role</h3>
-              <p className="text-2xl">Blockchain Developer</p>
+              <p className="text-2xl">Fullstack Developer</p>
             </div>
             <div className="">
               <h3 className="text-xl font-sans font-semibold">Experience</h3>
-              <p className="text-2xl">2 Years</p>
+              <p className="text-2xl">1 Years</p>
             </div>
             <div className="">
               <h3 className="text-xl font-sans font-semibold">Company</h3>
-              <p className="text-2xl">Solana</p>
+              <p className="text-2xl">Huddle01</p>
             </div>
           </div>
           <div className="">
@@ -64,13 +64,13 @@ const Profile = () => {
             </h3>
             <div className="flex gap-2 cursor-pointer">
               <span className="bg-[#f0c987] hover:bg-transparent text-black px-2 py-1 rounded-full">
-                Blockchain
+                Fullstack
               </span>
               <span className="bg-[#f0c987] hover:bg-transparent text-black px-2 py-1 rounded-full">
-                Solidity
+                Rust
               </span>
               <span className="bg-[#f0c987] hover:bg-transparent text-black px-2 py-1 rounded-full">
-                Ethereum
+                Solana
               </span>
             </div>
           </div>
@@ -78,13 +78,12 @@ const Profile = () => {
             Description
           </h1>
           <p className=" mx-1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
-            porttitor sem. Aliquam erat volutpat.
+            Developer with 6+ years of experience. Building in Solana since 2021.
           </p>
         </div>
       </div>
       <div className="flex my-20 items-center mx-10 justify-center gap-20">
-        <ServiceCard /> <ServiceCard /> <ServiceCard />
+        <ServiceCard data={"15 min"}/> <ServiceCard data={"30 min"}/> <ServiceCard data={"1 hr"}/>
       </div>
     </div>
   );

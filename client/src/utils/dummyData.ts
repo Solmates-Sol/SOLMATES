@@ -9,7 +9,8 @@ const data = [{
   "email": "john.doe@example.com",
   "twitter": "@johndoe",
   "linkedin": "https://linkedin.com/in/johndoe",
-  "walletAddress": "6789012345678901234567890"
+  "walletAddress": "6789012345678901234567890",
+  "imgName": "Max"
 },
     {
       "name": "Michael Brown",
@@ -22,7 +23,8 @@ const data = [{
       "email": "michael.brown@example.com",
       "twitter": "@michaelbrown",
       "linkedin": "https://linkedin.com/in/michaelbrown",
-      "walletAddress": "0123456789012345678901234567890"
+      "walletAddress": "0123456789012345678901234567890",
+      "imgName": "Molly"
     },
     {
       "name": "Sophia Wilson",
@@ -35,7 +37,8 @@ const data = [{
       "email": "sophia.wilson@example.com",
       "twitter": "@sophiawilson",
       "linkedin": "https://linkedin.com/in/sophiawilson",
-      "walletAddress": "65432109876543210987654321"
+      "walletAddress": "65432109876543210987654321",
+      "imgName": "Annie"
     },
     {
       "name": "David Lee",
@@ -48,7 +51,8 @@ const data = [{
       "email": "david.lee@example.com",
       "twitter": "@davidlee",
       "linkedin": "https://linkedin.com/in/davidlee",
-      "walletAddress": "56890123456789012345678901234"
+      "walletAddress": "56890123456789012345678901234",
+      "imgName": "Aneka"
     },
   
 ]
