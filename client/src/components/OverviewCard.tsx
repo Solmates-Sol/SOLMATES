@@ -2,8 +2,8 @@ import React from "react";
 
 const OverviewCard = () => {
 	return (
-		<div className="bg-[#fbf5e5] flex flex-row pt-5 md:pt-10 lg:pt-10 w-full h-screen">
-			<div className="md:flex md:flex-col hidden my-auto w-[30%] md:w-[60%] sm:w-[70%] sm:mx-auto  items-center">
+		<div className="bg-[#fbf5e5] flex flex-col items-center lg:flex-row pt-5 md:pt-10 lg:pt-10 w-full h-screen">
+			<div className="flex flex-col my-5 md:my-auto w-[90%] md:w-[60%] lg:w-[70%] sm:mx-auto  items-center">
 				<div className="border border-black w-[50%] text-center h-96 items-center rounded-3xl shadow-2xl">
 					<div className="flex flex-col justify-center mt-4 items-center">
 					<img
@@ -28,7 +28,7 @@ const OverviewCard = () => {
 
 				</div>
 			</div>
-			<div className="flex flex-col my-auto w-[70%] md:w-[60%] items-start">
+			<div className="flex flex-col my-5 w-[70%] md:w-[60%] items-start">
 				<span className="text-2xl md:text-5xl font-bold pb-3 text-wrap">
 					Use Solmates and unlock<br /> your new source of<br /> income.
 				</span>

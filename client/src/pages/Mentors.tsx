@@ -14,7 +14,7 @@ const Mentors = () => {
 			</div>
 
 			<div>
-				<div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-12 my-10 mx-10">
+				<div className="grid h-[100%]*5 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-12 my-10 mx-10">
 					{
 						data.map((mentor, index) => (
 							<MentorCard key={index} mentor={mentor} />
